@@ -1,0 +1,970 @@
+@import "./variables";
+@import "./mixins";
+@import "./responsive";
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+.wrap1{
+    max-width: 1440px;
+    max-height: 5189px;
+    margin: 0 auto;
+    padding-bottom: 126.73px;
+
+}
+
+.header{
+    @include mobile(){
+        margin: 10px;
+    }
+    @include tablet(){
+        margin: 10px;
+        position: relative;
+    }
+    margin: 45.62px 150px 0;
+    @include flex(space-between,center);
+    &__logo{
+        text-decoration: none;
+        @include flex(space-between,center);
+        &__text{
+            font-size: 20px;
+            margin-left: 10px;
+            color: $textColorBold;
+        }
+    }
+    img{
+        @include img(35px, 36.23px);
+    }
+    &__list{
+        @include mobile(){
+            display: none;
+        }
+        @include tablet(){
+            position: absolute;
+            top: 120%;
+            transform: translateX(-110%);
+            right: -50%;
+        }
+        @include flex(space-between,center);
+        list-style: none;
+        
+    }
+
+    &__item{
+        margin: 0 20px;
+        & a{
+            text-decoration: none;
+            color: $textColor;
+            font-size: 16px;
+        }
+    }
+    &__sign{
+        @include mobile(){
+            display: none;
+        }
+        display: flex;
+        &__in{
+            border: none;
+            background-color: #ffff;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        &__up{
+            font-size: 16px;
+            color: $primaryColor;
+            margin-left: 40px;
+            padding: 13px 45px;
+            border: 1px solid $primaryColor;
+            border-radius: 50px;
+            background-color: #ffff;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.5s;
+        }
+        &__up:hover{
+            background-color: $primaryColor;
+            color: #ffff;
+        }
+    }
+    &__navbar{
+        @include laptop(){
+            display: none;
+        }
+        @include tablet(){
+            display: none;
+        }
+        position: relative;
+        &__box{
+            margin-top: 5px;
+            width: 25px;
+            height: 25px;
+            &__span{
+                display: block;
+                margin-bottom: 5px;
+                width: 25px;
+                border-top: 2px solid black;
+            }
+        }
+        &__list{
+            position: absolute;
+            list-style: none;
+            left: -90px;
+            padding: 10px;
+            background-color: #ffff;
+            box-shadow: 5px 5px 25px rgba($textColorBold, .5);
+            transform: translateX(0);
+
+            &__item{
+                &:nth-child(n+6) a{
+                    color: $textColorBold;
+                }
+                margin: 3px 0;
+                & a{
+                    display: block;
+                    padding: 5px;
+                    text-decoration: none;
+                    color: $textColor;
+                }
+               
+            }
+            &--active{
+
+                display: none;
+            }
+        }
+    }
+}
+
+.banner{
+    @include mobile(){
+        margin: 10px;
+        flex-direction: column;
+    }
+    @include tablet(){
+        margin: 70px 10px 10px;
+    }
+    margin: 88.49px 83px 0 150px;
+    @include flex(space-between,center);
+    &__desc{
+        &__head{
+            @include mobile(){
+                font-size: 30px;
+                line-height: unset;
+            }
+            @include tablet(){
+                font-size: 30px;
+                line-height: unset;
+            }
+            font-size: 50px;
+            color: $textColorBold;
+            font-weight: 500;
+            line-height: 70px;
+        }
+        &__content{
+            @include mobile(){
+                font-size: 14px;
+                line-height: unset;
+            }
+            @include tablet(){
+                font-size: 14px;
+                line-height: unset;
+            }
+            margin: 20px 0 50px 0;
+            font-size: 16px;
+            color: $textColor;
+            font-weight: 500;
+            line-height: 30px;
+        }
+        &__btn{
+            padding: 17.5px 77.5px;
+            border: 2px solid $primaryColor;
+            background-color: #ffff;
+            color: $primaryColor;
+            border-radius: 10px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: .5s;
+            &:hover{
+                background-color: $primaryColor;
+                color: #ffff;
+                box-shadow: 0 30px 50px rgba($color: $primaryColor, $alpha: .35);
+            }
+        }
+    }
+    &__image{
+        @include tablet(){
+            width: 100%;
+            height: 100%;
+        }
+        & img{
+            @include mobile(){
+                @include img(400px,250px);
+            }
+            @include tablet(){
+                @include img(100%,100%);
+            }
+        }
+        @include mobile(){
+            width: unset;
+            height: unset;
+            order: -1;
+            margin: 0;
+            margin-bottom: 20px;
+        }
+        @include img(611.24px,382.44px);
+        margin-left: 40.76px;
+    }
+}
+
+.quantity{
+    @include mobile(){
+        margin: 0;
+    }
+    @include tablet(){
+        margin: 0;
+    }
+    margin: 103px 150px 0;
+    position: relative;
+    &__wrap{
+        @include mobile(){
+            padding: 0;
+            @include flex(space-around, center);
+            margin-top: 50px;
+        }
+        @include tablet(){
+            padding: 0;
+            @include flex(space-around, center);
+            margin-top: 50px;
+            padding-bottom: 20px;
+        }
+        @include flex(space-between, center);
+        padding: 37.21px 91px;
+        background-color: #ffff;
+        border-radius: 10px;
+        &__box{
+            @include mobile(){
+                margin: 0;
+                padding: 0;
+            }
+            @include tablet(){
+                margin: 0;
+                padding: 0;
+            }
+            position: relative;
+            @include flex(space-between, center);
+            margin: 0 67.5px;
+            padding: 30.29px 0;
+            & img{
+                @include mobile(){
+                    @include img(25px, 25px);
+                    margin: 0;
+                    margin-right: 5px;
+                }
+                @include tablet(){
+                    @include img(40px, 40px);
+                    margin: 0;
+                    margin-right: 10px;
+                }
+                @include img(55px, 55px);
+                margin-right: 36.5px;
+            }
+            &__child{
+                @include flex(space-between, center);
+                flex-direction: column;
+                &__num{
+                    @include mobile(){
+                        font-size: 16px;
+                    }
+                    @include tablet(){
+                        font-size: 25px;
+                    }
+                    font-size: 25px;
+                    font-weight: 700;
+                }
+                &__text{
+                    @include mobile(){
+                        font-size: 14px;
+                    }
+                    @include tablet(){
+                        font-size: 18px;
+                    }
+                    font-size: 20px;
+                }
+    
+            }
+            &:first-child::after{
+                @include mobile(){
+                    font-size: 14px;
+                    right: -34.5px;
+                }
+                content: "";
+                position: absolute;
+                height: 100%;
+                border-right: 2px solid #EEEFF2;
+                right: -67.5px;
+            }
+            &:last-child::after{
+                @include mobile(){
+                    font-size: 14px;
+                    left: -34.5px;
+                }
+                content: "";
+                position: absolute;
+                height: 100%;
+                border-right: 2px solid #EEEFF2;
+                left: -67.5px;
+            }
+        }
+
+    }
+    
+    &::after{
+        @include mobile(){
+            top: 15px;
+            width: 100%;
+            height: 100%;
+            left: 0;
+        }
+        @include tablet(){
+            top: 30px;
+            width: 100%;
+            height: 100%;
+            left: 0;
+        }
+        content: "";
+        position: absolute;
+        top: 52.8px;
+        width: 1068.84px;
+        height: 189.22px;
+        border-radius: 50px;
+        background: linear-gradient(to bottom, #0B132A, transparent);
+        opacity: 20%;
+        z-index: -1;
+        left: 35.58px;
+    }
+}
+
+.features{
+    @include mobile(){
+        flex-direction: column;
+        margin: 0 10px;
+    }
+    @include tablet(){
+        width: 100%;
+        margin: 0;
+        margin-top: 50px;
+    }
+    margin: 95.83px 150px 0 184.52px;
+    @include flex(space-between,flex-end);
+    &__img{
+        @include mobile(){
+            width: 100%;
+            margin: 20px 0;
+            height: unset;
+        }
+        @include tablet(){
+            width: 100%;
+            margin: 0;
+            height: unset;
+        }
+        @include img(508.12px,414.71px);
+        margin-right: 169.48px;
+    }
+    &__desc{
+        &__head{
+            @include mobile(){
+                font-size: 30px;
+            }
+            color: $textColorBold;
+            font-size: 35px;
+            line-height: 50px;
+            font-weight: 500;
+        }
+        &__content{
+            @include mobile(){
+                font-size: 14px;
+            }
+            font-size: 16px;
+            line-height: 30px;
+            color: $textColor
+        }
+        &__features{
+            @include flex(start,center);
+            & img{
+                @include mobile(){
+                    font-size: 14px;
+                    @include img(15px,15px);
+                }
+                margin-right: 5px;
+                @include img(20px,20px);
+            }
+            &__text{
+                @include mobile(){
+                    font-size: 12px;
+                }
+                color: $textColor;
+                font-size: 14px;
+                line-height: 30px;
+            }
+        }
+    }
+}
+
+.wrap2{
+    @include mobile(){
+        padding-bottom: 300px;
+    }
+    @include tablet(){
+        width: 100%;
+        padding-bottom: 300px;
+    }
+
+    margin: auto;
+    max-width: 1440px;
+    max-height: 5189px;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to bottom, #F6F6F6, #ffff);
+    padding-top: 80.27px;
+    overflow: hidden;
+    padding-bottom: 181.52px;
+}
+
+.header2, .header3{
+    margin: auto;
+    text-align: center;
+    &__name{
+        @include mobile(){
+           font-size: 30px;
+        }
+        font-size: 35px;
+        line-height: 50px;
+        font-weight: 500;
+        color: $textColorBold;
+    }
+    &__desc{
+        @include mobile(){
+            width: unset;
+            font-size: 14px;
+        }
+        margin: auto;
+        font-size: 16px;
+        line-height: 30px;
+        font-weight: 400;
+        width: 555px;
+        color: $textColor;
+    }
+}
+
+.content{
+    @include mobile(){
+        margin: 20px 0 0;
+        display: block;
+        height: unset;
+    }
+    @include tablet(){
+        margin: 20px 0 0;;
+    }
+    @include flex(space-between, center);
+    margin: 60px 176.02px 0 174.14px;
+    height: 760px;
+    &__box{
+        @include mobile(){
+            margin-bottom: 20px;
+            height: unset;
+            position: unset;
+        }
+        @include tablet(){
+            width: calc(100%/3);
+        }
+        // @include flex(space-between,center);
+        // flex-direction: column;
+        position: relative;
+        height: 100%;
+        text-align: center;
+        background: #fff;
+        border: 2px solid #DDDDDD;
+        border-radius: 10px;
+        cursor: pointer;
+        &:hover{
+            border: 2px solid $primaryColor;
+        }
+        &__imgBox{
+            @include mobile(){
+                margin: 20px 0;
+                @include img(100px, unset);
+            }
+            @include tablet(){
+                margin: 20px 0;
+            }
+            margin: 79.63px 92.55px 30px ;
+            @include img(144.9px,165.37px);
+        }
+        &__desc{
+            @include mobile(){
+                font-size: 16px;
+            }
+            font-size: 18px;
+            line-height: 30px;
+            font-weight: 500;
+            color: $textColorBold;
+        }
+        &__list{
+            margin-top: 30px;
+            &__item{
+                @include mobile(){
+                    margin: 0;
+                    margin-left: 120px;
+                }
+                margin-left: 35.19px;
+                margin-bottom: 10px;
+                display: flex;
+                align-items: center;
+                & img{
+                    @include img(13.33px,9.07px);
+                }
+                &__text{
+                    @include mobile(){
+                        font-size: 12px;
+                    }
+                    font-size: 14px;
+                    line-height: 30px;
+                    color: $textColor;
+                    margin-left: 25.61px;
+                }
+            }
+        }
+        &__price{
+            @include mobile(){
+                margin-top: 50px;
+                position: unset;
+                transform: unset;
+            }
+            position: absolute;
+            bottom: 115px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-weight: 500;
+            font-size: 25px;
+            line-height: 30px;
+            color: $textColorBold;
+            & span{
+                color: $textColor;
+            }
+        }
+        &__btn{
+            @include mobile(){
+                position: unset;
+                transform: unset;
+                margin-bottom: 30px;
+                margin-top: 20px;
+            }
+            position: absolute;
+            bottom: 50px;
+            transform: translateX(-50%);
+            padding: 13px 62.94px;
+            background-color: #F6F6F6;
+            color: $primaryColor;
+            font-weight: 700;
+            line-height: 18.86px;
+            border: 1px solid $primaryColor;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: .5s;
+        }
+        &__btn:hover{
+            background-color: $primaryColor;
+            box-shadow: 0 30px 30px rgba($color: $primaryColor, $alpha: .35);
+            color: #F6F6F6;
+        }
+    }
+}
+.map{
+    @include mobile(){
+        margin: 0;
+    }
+    @include tablet(){
+        margin: 50px 0 0;
+    }
+    margin-top: 150px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    &__head{
+        @include mobile(){
+            font-size: 30px;
+            width: unset;
+            margin: 0 10px;
+        }
+        margin: auto;
+        width: 383.41px;
+        font-size: 35px;
+        line-height: 50px;
+        font-weight: 500;
+        color: $textColorBold;
+    }
+    &__desc{
+        @include mobile(){
+            font-size: 14px;
+            width: unset;
+            margin: 0 10px;
+        }
+        margin: auto;
+        font-size: 16px;
+        line-height: 30px;
+        font-weight: 500;
+        color: $textColor;
+        width: 555px;
+    }
+    &__img{
+        @include mobile(){
+            margin: auto;
+            @include img(90%, unset);
+        }
+        @include tablet(){
+            margin: 50px auto 0;
+            @include img(90%, unset);
+        }
+        margin: 155.81px 190px 0;
+        @include img(1060px, 537.77px);        
+    }
+    &__imgCompany{
+        @include mobile(){
+            margin: auto;
+            @include img(90%, unset);
+        }
+        @include tablet(){
+            margin: auto;
+            @include img(90%, unset);
+        }
+        margin: 35.81px 0 0 145px;
+        @include img(1135.64px, 208.32px); 
+    }
+}
+.comment{
+    @include mobile(){
+        width: 100%;
+        height: unset;
+        margin: 0;
+    }
+    @include tablet(){
+        width: 100%;
+        height: unset;
+        margin: 0;
+    }
+    position: relative;
+    margin: 50px 0 0 150px;
+    width: 1300px;
+    height: 590px;
+    .header3{
+        &__name{
+            @include mobile(){
+                width: unset;
+                margin: 0;
+                font-size: 30px;
+            }
+            @include tablet(){
+                width: unset;
+                margin: 0;
+                font-size: 30px;
+            }
+            margin-right: 452.5px;
+            margin-left: 346.1px;
+            width: 447.81px;
+        }
+        &__desc{
+            @include mobile(){
+                width: unset;
+                margin: 0;
+                font-size: 14px;
+            }
+            @include tablet(){
+                width: unset;
+                margin: 0;
+                font-size: 14px;
+            }
+            margin-right: 506.1px;
+            margin-left: 292.5px;
+            margin-top: 20px;
+        }
+    }
+    
+    &__box{
+        @include mobile(){
+            width: 400%;
+            margin-top: 50px;
+        }
+
+        margin-top: 60px;
+        display: inline-flex;
+        transition: .5s;
+        
+        &__item{
+            @include mobile(){
+                width: 100%;
+                margin: 0;
+            }
+            @include tablet(){
+                width: 355px;
+                height: 280px;
+                
+            }
+            padding: 30px;
+            width: 400px;
+            height: 230px;
+            border: 2px solid #dddddd;
+            border-radius: 10px;
+            margin-right: 50px;
+            &__info{
+                @include flex(space-between, center);
+                margin-bottom: 20px;
+                &__info{
+                    @include flex(space-between, center);
+                    & img{
+                        @include img(50px,50px);
+                        margin-right: 20px;
+                    }
+                    &__box{
+                        &__name{
+                            font-size: 18px;
+                            font-weight: 600;
+                            color: $textColorBold;
+                        }
+                        &__nickname{
+                            margin-top: 5px;
+                            font-weight: 400;
+                            font-size: 14px;
+                            color: $textColor
+                        }
+                    }
+                }
+                &__star{
+                    @include flex(space-between, center);
+                    &__num{
+                        font-size: 16px;
+                        font-weight: 400;
+                        color: $textColorBold
+                    }
+                    & img{
+                        @include img(13.23px, 12.64px);
+                        margin-left: 11.38px;
+                    }
+                }
+            }
+            &__content{
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 30px;
+                color: $textColorBold;
+            }
+            &--active{
+                border: 2px solid $primaryColor;
+                border-radius: 10px;
+            }
+        }
+    }
+    &__dot{
+        @include mobile(){
+            bottom: -35px;
+            left: 22px;
+        }
+        @include tablet(){
+            bottom: -35px;
+            left: 22px;
+        }
+        position: absolute;
+        bottom: 22.5px;
+        &__span{
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            background-color: #DDDDDD;
+            border-radius: 50%;
+            margin-right: 15px;
+            &--active{
+                background-color: $primaryColor;
+                border-radius: 50px;
+                width: 45.14px;
+                transition: .5s;
+            }
+        }
+    }
+    &__btn{
+        @include mobile(){
+            bottom: -105px;
+            left: 0;
+        }
+        @include tablet(){
+            bottom: -70px;
+            right: 10px;
+        }
+        position: absolute;
+        bottom: 0;
+        right: 160px;
+        &__next{
+            text-align: center;
+            width: 60px;
+            height: 60px;
+            border: 2px solid $primaryColor;
+            border-radius: 50%;
+            margin-left: 20px;
+            cursor: pointer;
+            & img{
+                @include img(20px, 17.5px);
+            }
+            &:last-child img{
+                transform: rotate(180deg);
+            }
+        }
+    }
+}
+.wrap3{
+    @include mobile(){
+        padding: 180px 0 100px;
+    }
+    @include tablet(){
+        padding: 180px 10px 100px;
+    }
+    padding: 180px 150px 100px;
+    max-width: 1440px;
+    max-height: 5189px;
+    margin: 0 auto;
+    background: #F6F6F6;
+    .footer{
+        @include mobile(){
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        position: relative;
+        @include flex(space-between, start);
+        width: 100%;
+        // margin: 180px 150px 100px;
+        &__contact{
+            @include mobile(){
+                margin-top: 50px;
+                order: 4;
+            }
+            .header{
+                margin: 0;
+            }
+            &__content{
+                margin-top: 20px;
+                width: 340px;
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 30px;
+                color: #4F5665;
+            }
+            &__icon{
+                display: flex;
+                &__link{
+                    margin: 30px 0;
+                    width: 33.6px;
+                    height: 33.6px;
+                    margin-right: 20px;
+                    background-color: $primaryColor;
+                    border-radius: 50%;
+                    border: 2px solid #fff;
+                    & img{
+                        @include img(34.6px,33.6px);
+                        transform: translate(-2px,-2px);
+                    }
+                }
+            }
+            &__copyright{
+                @include mobile(){
+                    text-align: center;
+                }
+                font-size: 16px;
+                line-height: 30px;
+                color: #AFB5C0;
+            }
+        }
+        &__box__product{
+            display: flex;
+            flex-direction: column;
+            &__head{
+                font-weight: 600;
+                font-size: 18px;
+                line-height: 30px;
+                color: $textColorBold;
+            }
+            &__link{
+                margin: 10px 0;
+                line-height: 30px;
+                text-decoration: none;
+                font-size: 16px;
+                color: $textColor;
+            }
+        }
+        &__subcribe{
+            @include mobile(){
+                text-align: center;
+                width: 100%;
+                display: block;
+                top: -50%;
+                padding: 0;
+                height: unset;
+            }
+            @include tablet(){
+                width: 100%;
+                top: -75%;
+                padding: 0;
+                height: unset;
+            }
+            @include flex(space-between, center);
+            top: -90%;
+            padding: 58.5px 70px;
+            position: absolute;
+            width: 1140px;
+            height: 233px;
+            border-radius: 10px;
+            background-color: #ffff;
+            &__box{
+                &__head{
+                    width: 371.61px;
+                    line-height: 45px;
+                    font-size: 35px;
+                    font-weight: 500;
+                    color: $textColorBold;
+                }
+                &__content{
+                    margin-top: 20px;
+                    font-size: 16px;
+                    line-height: 30px;
+                    color: $textColor;
+                }
+            }
+            &__btn{
+                @include mobile(){
+                    margin-top: 20px;
+                }
+                padding: 17.5px 65px;
+                font-size: 16px;
+                line-height: 25px;
+                border: 2px solid $primaryColor;
+                border-radius: 10px;
+                font-weight: 700;
+                color: $primaryColor;
+                background-color: #ffff;
+                cursor: pointer;
+                transition: .5s;
+                &:hover{
+                    color: #ffff;
+                    background-color: $primaryColor;
+                    box-shadow: 0 30px 50px rgba($color: $primaryColor, $alpha: .35);
+                }
+            }
+        }
+        
+
+    }
+}
